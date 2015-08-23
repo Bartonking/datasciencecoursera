@@ -9,7 +9,7 @@ require(dplyr)
 require(tidyr)
 require(reshape2)
 ##download zip file
-setwd("C:/Projects/Coursera/course_cleaningdata/projectfields")
+##setwd("*******/projectfields")
 
 ##   download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "d.zip")
 ##  unzip("d.zip")
