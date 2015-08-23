@@ -46,5 +46,5 @@ The dataset is then grouped by the volunteer's id and the actvitity type.  The r
 
 Finally the scripts writes the results to a text file. run_analsys_031_barton.txt
 
-## Added project files
+
 
