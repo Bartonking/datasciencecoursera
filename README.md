@@ -45,3 +45,6 @@ The label names for the tidy dataset is updated to provide a better descriptive 
 The dataset is then grouped by the volunteer's id and the actvitity type.  The results is summarized by the mean of the activity and spread out to create a new columne for each activity shown the arverage amount.  To complete the data presentation, a next column is added for the row average.   
 
 Finally the scripts writes the results to a text file. run_analsys_031_barton.txt
+
+## Added project files
+
