@@ -53,7 +53,9 @@ tidyset <- rbind.data.frame(tests.tidy,train.tidy)
 
 ## No. 2 Extracts only the measurements on the mean and standard deviation for each measurement.
 dfset <- tbl_df(tidyset)  ## create a special dataframe
-no2 <-  dfset %>% group_by(variable)  %>% summarise(measure_mean = mean(value), measure_sd = sd(value))
+no2 <-  dfset %>% 
+        group_by(variable)  %>% 
+        summarise(measure_mean = mean(value), measure_sd = sd(value))
 
 
 ## no. 3 Uses descriptive activity names to name the activities in the data set
@@ -62,11 +64,15 @@ tidyset$labelnames <- activities[tidyset$labelnames]
 
 
 ## no 4 Appropriately labels the data set with descriptive variable names
-tidyset.renamed <- tidyset %>% rename(volunteer_id = subjects , activity = labelnames, measure_ob = variable) 
+tidyset.renamed <- tidyset %>% 
+                   rename(volunteer_id = subjects , activity = labelnames, measure_ob = variable) 
 
 
 ## no 5 creates a second, independent tidy data set with the average of each variable for each activity and each subject
-bag <- tidyset.renamed %>% group_by(volunteer_id, activity) %>% summarise( mactvity = mean(value)) %>% spread(activity,mactvity)  
+bag <- tidyset.renamed %>% 
+       group_by(volunteer_id, activity) %>% 
+       summarise( mactvity = mean(value)) %>% 
+       spread(activity,mactvity)  
 no5results <- mutate(bag, row_arg = rowMeans(bag[,2:6]))
 
 ## Generation a dataframe and store it to file
